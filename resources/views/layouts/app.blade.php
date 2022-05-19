@@ -23,12 +23,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand special" style="color:blue"  href="{{ url('/') }}">
+                <a class="navbar-brand special" style="color:blue"  href="{{ route('home') }}">
                     Laravel Auth
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
                 <div class="" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -49,12 +46,16 @@
                                 </li>
                             @endif
                         @else
-                            <li class="nav-item" style="display:flex; justify-content:center; align-items:center">
-                                <a class="nav-link" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <li class="nav-item special" style="display:flex; justify-content:center; align-items:center">
+                                <a class="nav-link" href="{{route('admin.home')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
-                                <div class="nav-link" aria-labelledby="navbarDropdown">
+                                <a class="nav-link special" href="{{route('admin.posts.index')}}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    Visualizza i post
+                                </a>
+
+                                <div class="nav-link special" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                     document.getElementById('logout-form').submit();">

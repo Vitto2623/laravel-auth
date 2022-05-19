@@ -6,7 +6,9 @@
             @if (!Auth::check())
 
                 <h4 class="fs-1">Benvenuto!</h4>
-
+                
+            @else
+                    <h4 class="fs-1">Benvenuto/a {{Auth::user()['name']}}!</h4>
             @endif
         </div>
     </div>

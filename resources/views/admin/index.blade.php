@@ -13,7 +13,9 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body">
-                                <h5 class="card-title">{{$post->title}}</h5>
+                                <a href="{{route('admin.posts.show', $post)}}" class="fs-2">
+                                    {{$post->title}}
+                                </a>
                                 <h5 class="card-title">{{$post->author}}</h5>
                                 <p class="card-text overflow-auto" style="height: 120px">{{$post->content}}</p>
                                 <p class="card-text"><small class="text-muted">{{$post->created_at}}</small></p>
